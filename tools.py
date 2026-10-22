@@ -27,7 +27,8 @@ search_wrapper = DuckDuckGoSearchAPIWrapper(
     region="in-en", backend="duckduckgo", max_results=5
 )
 
-search = DuckDuckGoSearchRun()
+search = DuckDuckGoSearchRun(api_wrapper=search_wrapper)
+
 search_tool = Tool(
     name="search",
     func=search.run,
